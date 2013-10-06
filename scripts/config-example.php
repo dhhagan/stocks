@@ -1,8 +1,8 @@
 <?php
 //Configuration information:: Should be ignored with .gitignore
-define("HOST","localhost");
-define("USERNAME","david");
-define("PASSWORD","a8041807");
-define("DATABASE","stocks");
+define("HOST","Host Name");
+define("USERNAME","username");
+define("PASSWORD","****");
+define("DATABASE","db_name");
 
 ?>
