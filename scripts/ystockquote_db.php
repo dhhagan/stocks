@@ -2,6 +2,8 @@
 	//ystockquote_db.php
 	//SQL Statements:  Enter into DB
 	
+	require_once('use_stocks.php');
+	
 	class tick_info {
 		/* tick_info allows the user to enter and delete entries from the database
 			containing the ticker information for all companies
@@ -42,8 +44,9 @@
 	class new_db {
 		/*
 			This class creates all neccesary tables in your database 
+				1) ticker_info : contains ticker, name, exchange
+				2) stock_data : contains daily information including 
 		*/
-		require_once('use_stocks.php');
 		
 		function __construct() {
 			
