@@ -1,5 +1,5 @@
 <?php
-//Configuration information:: Should be ignored with .gitignore
+//Configuration information:: Example
 define("HOST","localhost");
 define("USERNAME","david");
 define("PASSWORD","a8041807");
