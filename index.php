@@ -19,7 +19,7 @@ $columns = mysql_list_fields("stocks","fb") or handle_error("there was a problem
     <title>David's Stock Paradise</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap-3.0.0/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 
 
 
@@ -178,6 +178,6 @@ $columns = mysql_list_fields("stocks","fb") or handle_error("there was a problem
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="//code.jquery.com/jquery.js"></script>
 	<script src="scripts/js/main.js" ></script>
-    <script src="bootstrap-3.0.0/dist/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
   </body>
 </html>
