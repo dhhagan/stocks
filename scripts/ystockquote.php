@@ -45,14 +45,137 @@ class ystockquote {
 		return $data;
 		}
 		
-	public function get_price() {
-		$stat = 'l1';
+	public function get_afterHoursChangeRealtime() {
+		// tested with FB 10/6/2013 -> N/A
+		$stat = 'c8';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_annualizedGain() {
+		// tested with FB 10/6/2013 -> '-'
+		$stat = 'g3';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+	
+	public function get_ask() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'a0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_askRealtime() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'b2';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_askSize() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'a5';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_avgDailyVol() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'a2';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+	
+	public function get_bid() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'b0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+	
+	public function get_bidRealtime() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'b3';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+	
+	public function get_bidSize() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'b6';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_bookValuePerShare() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'b4';
 		$line = $this->request($stat);
 		
 		return $line[0];
 		}
 		
 	public function get_change() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'c1';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_changeInPercent() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'c0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}	
+		
+	public function get_changeFrom50DayMovingAvg() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'm7';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_changeFrom200DayMovingAvg() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'm5';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+	
+	public function get_changeFromYearHigh() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'k4';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+		
+	////////////////////////////////////
+	public function get_price() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'l1';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_chang() {
 		$stat = 'c1';
 		$line = $this->request($stat);
 		
@@ -66,12 +189,7 @@ class ystockquote {
 		return $line[0];
 		}
 		
-	public function get_avg_daily_volume() {
-		$stat = 'a2';
-		$line = $this->request($stat);
-		
-		return $line[0];
-		}	
+	
 		
 	public function get_stock_exchange() {
 		$stat = 'x';
@@ -194,11 +312,11 @@ class ystockquote {
 		*/
 }
 
-	/*
+	
 	$FB = new ystockquote('FB');
-	$data = $FB->get_price_earnings_growth_ratio();
+	$data = $FB->get_changeFromYearHigh();
 	echo $data;
-*/
+
 	
 
 ?>
