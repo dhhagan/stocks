@@ -164,7 +164,209 @@ class ystockquote {
 		
 		return $line[0];
 		}
+	
+	public function get_changeFromYearLow() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'j5';
+		$line = $this->request($stat);
 		
+		return $line[0];
+		}	
+		
+	public function get_changeInPercen() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'p2';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_changeInPercentRealtime() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'k2';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_changeRealtime() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'c6';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_commision() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'c3';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}	
+		
+	public function get_currency() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'c4';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_dayHigh() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'h0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+	
+	public function get_dayLow() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'g0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_dayRange() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'm0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_dayRangeRealtime() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'm2';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}	
+		
+	public function get_dayValueChange() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'w1';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_dayValueChangeRealtime() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'w4';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_dividendPayDate() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'r1';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_trailingAnnualDividendYield() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'd0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_trailingAnnualDividendYieldInPercent() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'y0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_dilutedEPS() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'e0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_ebitda() {
+		$stat = 'j4';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+	
+	public function get_EPSEstimateCurrentYear() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'e7';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_EPSEstimatenextQuarter() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'e9';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}	
+	
+	public function get_EPSEstimateNextYear() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'e8';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}	
+		
+	public function get_exDividendDate() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'q0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}	
+		
+	public function get_50day_moving_average() {
+		$stat = 'm3';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_sharesFloat() {
+		// tested with FB 10/6/2013 -> passed
+		$stat = 'f6';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+	
+	public function get_highLimit() {
+		$stat = 'l2';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_holdingsGain() {
+		$stat = 'g4';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_holdingsGainPercent() {
+		$stat = 'g1';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
 		
 	////////////////////////////////////
 	public function get_price() {
@@ -187,9 +389,7 @@ class ystockquote {
 		$line = $this->request($stat);
 		
 		return $line[0];
-		}
-		
-	
+		}			
 		
 	public function get_stock_exchange() {
 		$stat = 'x';
@@ -212,12 +412,7 @@ class ystockquote {
 		return $line[0];
 		}
 	
-	public function get_ebitda() {
-		$stat = 'j4';
-		$line = $this->request($stat);
-		
-		return $line[0];
-		}
+
 		
 	public function get_dividend_per_share() {
 		$stat = 'd';
@@ -253,13 +448,7 @@ class ystockquote {
 		
 		return $line[0];
 		}
-		
-	public function get_50day_moving_average() {
-		$stat = 'm3';
-		$line = $this->request($stat);
-		
-		return $line[0];
-		}
+			
 		
 	public function get_200day_moving_average() {
 		$stat = 'm4';
@@ -314,8 +503,8 @@ class ystockquote {
 
 	
 	$FB = new ystockquote('FB');
-	$data = $FB->get_changeFromYearHigh();
-	echo $data;
+	$data = $FB->get_holdingsGainPercent();
+	echo "$FB->ticker: $data";
 
 	
 
