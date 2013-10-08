@@ -5,6 +5,7 @@ class ystockquote {
 	public function __construct($ticker) {
 		$this->ticker = $ticker ;
 		}
+		
 	public function request($stat) {
 		// request() uses the csv yahoo finance api to grab the specific stats for a specific ticker
 		//$url = "../quotes.csv";  //Test for when not connected to interwebs
@@ -368,17 +369,302 @@ class ystockquote {
 		return $line[0];
 		}
 		
-	////////////////////////////////////
-	public function get_price() {
-		// tested with FB 10/6/2013 -> passed
+	public function get_holdingsGainPercentRealtime() {
+		$stat = 'g5';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+	
+	public function get_holdingsGainRealtime() {
+		$stat = 'g6';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_holdingsValue() {
+		$stat = 'v1';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_holdingsValueRealtime() {
+		$stat = 'v7';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_lastTradeDate() {
+		$stat = 'd1';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_lastTradePriceOnly() {
 		$stat = 'l1';
 		$line = $this->request($stat);
 		
 		return $line[0];
 		}
 		
-	public function get_chang() {
-		$stat = 'c1';
+	public function get_lastTradeRealtimeWithTime() {
+		$stat = 'k1';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+	
+	public function get_lastTradeSize() {
+		$stat = 'k3';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_lastTradeTime() {
+		$stat = 't1';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_lastTradeWithTime() {
+		$stat = 'l0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_lowLimit() {
+		$stat = 'l3';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_marketCapitalization() {
+		$stat = 'j1';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_marketCapRealtime() {
+		$stat = 'j3';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_moreInfo() {
+		$stat = 'i0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_name() {
+		$stat = 'n0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_notes() {
+		$stat = 'n4';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_oneYearTargetPrice() {
+		$stat = 't8';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_open() {
+		$stat = 'o0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_orderBookRealtime() {
+		$stat = 'i5';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_PEGRatio() {
+		$stat = 'r5';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_PERatio() {
+		$stat = 'r0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_PERatioRealtime() {
+		$stat = 'r2';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_percentChangeFrom50dayMovingAverage() {
+		$stat = 'm8';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_percentChangeFrom200dayMovingAverage() {
+		$stat = 'm6';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_changeInPercentFromYearHigh() {
+		$stat = 'k5';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_percentChangeFromYearLow() {
+		$stat = 'j6';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_previousClose() {
+		$stat = 'p0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_priceBook() {
+		$stat = 'p6';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_priceEPSEstimateCurrentYear() {
+		$stat = 'r6';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_priceEPSEstimateNextYear() {
+		$stat = 'r7';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_pricePaid() {
+		$stat = 'p1';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_priceSales() {
+		$stat = 'p5';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_revenue() {
+		$stat = 's6';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_sharesOwned() {
+		$stat = 's1';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_sharesOutstanding() {
+		$stat = 'j2';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_shortRatio() {
+		$stat = 's7';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_stockExchange() {
+		$stat = 'x0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_symbol() {
+		$stat = 's0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_tickerTrend() {
+		$stat = 't7';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_tradeDate() {
+		$stat = 'd2';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+	
+	public function get_tradeLinks() {
+		$stat = 't6';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_tradeLinksAdditional() {
+		$stat = 'f0';
+		$line = $this->request($stat);
+		
+		return $line[0];
+		}
+		
+	public function get_200day_moving_average() {
+		$stat = 'm4';
 		$line = $this->request($stat);
 		
 		return $line[0];
@@ -389,51 +675,7 @@ class ystockquote {
 		$line = $this->request($stat);
 		
 		return $line[0];
-		}			
-		
-	public function get_stock_exchange() {
-		$stat = 'x';
-		$line = $this->request($stat);
-		
-		return $line[0];
-		}
-		
-	public function get_market_cap() {
-		$stat = 'j1';
-		$line = $this->request($stat);
-		
-		return $line[0];
-		}
-	
-	public function get_book_value() {
-		$stat = 'b4';
-		$line = $this->request($stat);
-		
-		return $line[0];
-		}
-	
-
-		
-	public function get_dividend_per_share() {
-		$stat = 'd';
-		$line = $this->request($stat);
-		
-		return $line[0];
-		}
-		
-	public function get_dividend_yield() {
-		$stat = 'y';
-		$line = $this->request($stat);
-		
-		return $line[0];
-		}
-	
-	public function get_earnings_per_share() {
-		$stat = 'e';
-		$line = $this->request($stat);
-		
-		return $line[0];
-		}
+		}		
 		
 	public function get_52_week_high() {
 		$stat = 'k';
@@ -448,62 +690,20 @@ class ystockquote {
 		
 		return $line[0];
 		}
-			
 		
-	public function get_200day_moving_average() {
-		$stat = 'm4';
-		$line = $this->request($stat);
-		
-		return $line[0];
-		}
-	
-	public function get_price_earnings_ratio() {
-		$stat = 'r';
-		$line = $this->request($stat);
-		
-		return $line[0];
-		}
-		
-	public function get_price_earnings_growth_ratio() {
-		$stat = 'r5';
-		$line = $this->request($stat);
-		
-		return $line[0];
-		}
-		
-	public function get_price_sales_ratio() {
-		$stat = 'p5';
-		$line = $this->request($stat);
-		
-		return $line[0];
-		}
-		
-	public function get_price_book_ratio() {
-		$stat = 'p6';
-		$line = $this->request($stat);
-		
-		return $line[0];
-		}
-		
-	public function get_short_ratio() {
-		$stat = 'ls7';
-		$line = $this->request($stat);
-		
-		return $line[0];
-		}
-		/*
+	/*
 	public function get_historical_prices($start_date,$end_date) {
 		$stat = 'l1';
 		$line = $this->request($stat);
 		
 		return $line[0];
 		}
-		*/
+	*/
 }
 
 	
 	$FB = new ystockquote('FB');
-	$data = $FB->get_holdingsGainPercent();
+	$data = $FB->get_short_ratio();
 	echo "$FB->ticker: $data";
 
 	
