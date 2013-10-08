@@ -45,12 +45,44 @@
 		/*
 			This class creates all neccesary tables in your database 
 				1) ticker_info : contains ticker, name, exchange
-				2) stock_data : contains daily information including 
+				2) stock_data : contains daily information including:
+									price
+									change
+									volume
+									market_cap
+									book_val
+									EPS
+									50day_moving_avg
+									200day_moving_avg
+									PE
+									PEG
+									price_book
+									
 		*/
 		
 		function __construct() {
-			
+			$this->table1 = 'ticker_info';
+			$this->table2 = 'stock_data';
 			}
+		
+		$qry_tickerInfo = "CREATE TABLE IF NOT EXISTS `$this->table1` (
+							id INT NOT NULL AUTO_INCREMENT,
+							ticker varchar(10),
+							name varchar(50),
+							exchange varchar(20),
+							PRIMARY_KEY (id)
+							) ENGINE=INNODB;";
+							
+		$qry_stockData = "CREATE TABLE IF NOT EXISTS `$this->table2` (
+							id INT NOT NULL AUTO_INCREMENT,
+							tkr_id INT NOT NULL,
+							tckr varchar(10),
+							,
+							PRIMARY KEY (id),
+							FOREIGN_KEY (tkr_id) REFERENCES $this->table1(id)
+							ON UPDATE CASCADE
+							ON DELETE CASCADE
+							) ENGINE=INNODB;";
 		
 		}
 	/*

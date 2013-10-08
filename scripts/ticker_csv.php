@@ -8,7 +8,7 @@ function stock_array {
 	$row = 1;
 	$stock_array = array();
 			
-	if (($handle = fopen("../scripts/stock_info.csv", "r")) !== FALSE) {
+	if (($handle = fopen("stock_info.csv", "r")) !== FALSE) {
 		 while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 			$num = count($data);
 			if ($row != 1) {

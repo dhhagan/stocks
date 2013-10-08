@@ -6,6 +6,6 @@ $con = mysql_connect(HOST,USERNAME,PASSWORD)
 	or die("<p>Error connecting to database: " . mysql_error() . "</p>");
 
 mysql_select_db(DATABASE, $con)
-	or die("<p>Error selecting the database davidha_MeOh: " .mysql_error() . "</p>");
+	or die("<p>Error selecting the database: " .mysql_error() . "</p>");
 
 ?>
