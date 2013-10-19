@@ -691,20 +691,55 @@ class ystockquote {
 		return $line[0];
 		}
 		
-	/*
-	public function get_historical_prices($start_date,$end_date) {
-		$stat = 'l1';
-		$line = $this->request($stat);
+	
+	public function get_historical_prices($start_date,$end_date,$period) {
+		/*
+			Month and day must be decremented, while year is left the same
+			Trading periods: 
+				daily: d
+				weekly: w
+				monthly: m
+		*/
+		list($month_from, $day_from, $year_from) = explode('/',$start_date);
+		list($month_to, $day_to, $year_to) = explode('/',$end_date);
 		
-		return $line[0];
+		$month_from -= 1;
+		$day_from -= 1;
+		$month_to -= 1;
+		$day_to -= 1;
+		
+		$url = "http://ichart.yahoo.com/table.csv?s={$this->ticker}&a={$month_from}&b={$day_from}&c={$year_from}&d={$month_to}&e={$day_to}&f={$year_to}&g={$period}&ignore=.csv";
+		
+		$line = 0;
+		if ($handle = fopen($url,"r") !== FALSE){
+			$handle = fopen($url, "r");
+			
+			$row = 0;
+			$hist_data = array();
+			while ($data = fgetcsv($handle, 200, ",")) {
+				array_push($hist_array, $data);
+				//for ($i=0; $i<count($data); $i++){
+				//	$hist_data[] = ;
+				//	}
+					
+				$row++;
+
+				}
+			fclose($handle);
+			}
+		else {
+			// log error opening file
+			echo "";
+			}
+		echo "there are " . $line . " lines";
 		}
-	*/
 }
 
 	
 	$FB = new ystockquote('FB');
-	$data = $FB->get_short_ratio();
-	echo "$FB->ticker: $data";
+	$data = $FB->get_historical_prices('01/01/20012','10/14/2013','w');
+	//$num = $data[0];
+	//echo "$FB->ticker: $num";
 
 	
 
