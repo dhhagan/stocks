@@ -699,6 +699,9 @@ class ystockquote {
 				daily: d
 				weekly: w
 				monthly: m
+				
+			This returns an array of arrays; each array contains the following:
+				Date, Open, High, Low, Close, Volume, Adjusted Close
 		*/
 		list($month_from, $day_from, $year_from) = explode('/',$start_date);
 		list($month_to, $day_to, $year_to) = explode('/',$end_date);
@@ -710,15 +713,11 @@ class ystockquote {
 		
 		$url = "http://ichart.yahoo.com/table.csv?s={$this->ticker}&a={$month_from}&b={$day_from}&c={$year_from}&d={$month_to}&e={$day_to}&f={$year_to}&g={$period}&ignore=.csv";
 		
-		$lines = 0;
 		if ($file = fopen($url,"r")){
 			$row = 0;
 			$hist_data = array();
 			while ($data = fgetcsv($file,200,",")) {
 				array_push($hist_data, $data);
-				//print_r($hist_data);
-				//print_r($data);
-				//echo "<br >";
 				$row++;
 				}
 			fclose($file);
@@ -732,13 +731,11 @@ class ystockquote {
 		}
 }
 
-	
+	/* Example of how to use: */
 	$FB = new ystockquote('FB');
 	$data = $FB->get_historical_prices('01/01/20012','10/14/2013','d');
-
-	//$num = $data[0];
-	//echo "$FB->ticker: $num";
-
+	
+	print_r($data[0]);
 	
 
 ?>
