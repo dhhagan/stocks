@@ -717,7 +717,19 @@ class ystockquote {
 			$row = 0;
 			$hist_data = array();
 			while ($data = fgetcsv($file,200,",")) {
-				array_push($hist_data, $data);
+				if ($row != 0) {
+					$daily = array();
+					$daily["Date"] = $data[0];
+					$daily["Open"] = $data[1];
+					$daily["High"] = $data[2];
+					$daily["Low"] = $data[3];
+					$daily["Close"] = $data[4];
+					$daily["Volume"] = $data[5];
+					$daily["Adj Close"] = $data[6];
+					
+					array_push($hist_data, $daily);
+					}
+					
 				$row++;
 				}
 			fclose($file);
@@ -731,11 +743,14 @@ class ystockquote {
 		}
 }
 
-	/* Example of how to use: */
-	$FB = new ystockquote('FB');
-	$data = $FB->get_historical_prices('01/01/20012','10/14/2013','d');
-	
-	print_r($data[0]);
-	
+	/* Example of how to use: 
+	$FB = new ystockquote('FB'); // generates new ystockquote for FB
+	$val = $FB->get_52_week_high();
+	echo "52 Week High for {$FB->ticker}: {$val}";
+	//$data = $FB->get_historical_prices('01/01/20012','10/14/2013','d'); // grabs daily historical prices for FB for the timeframe Jan 1, 2012 to Oct 10, 2013
+	//foreach ($data[0] as $key=> $value){
+	//	echo "{$key}: {$value} <br/>";
+	//	}
+	*/
 
 ?>
