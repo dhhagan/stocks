@@ -1,0 +1,5 @@
+Log file for Daily Securities data: 2013/11/16
+
+
+Added 0 total rows for 0 tickers. 
+Time to run script:  2.07 seconds

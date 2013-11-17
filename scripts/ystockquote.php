@@ -8,7 +8,6 @@ class ystockquote {
 		
 	public function request($stat) {
 		// request() uses the csv yahoo finance api to grab the specific stats for a specific ticker
-		//$url = "../quotes.csv";  //Test for when not connected to interwebs
 		$url = "http://finance.yahoo.com/d/quotes.csv?s={$this->ticker}&f={$stat}&e=.csv";
 		
 		if ($handle = fopen($url,"r") !== FALSE){	
@@ -18,9 +17,7 @@ class ystockquote {
 		}
 		
 	public function get_all() {
-		//$stat = "l1c1va2xj1b4j4dyekjm3m4rr5p5p6s7";
-		  $stat = "l1o0p0h0g0a0b0c1m7m5k4j5r1d0y0d2d1k3a2m3m4x0s0t7c4g4v1s6s1t8kjvj1b4e0j4e7e9e8r5r0s7p6r6r7";
-		//$stat = "l1o0p0h0g0a0b0c1m7m5k4j5r1d0y0d2d1k3a2m3m4x0s0t7c4g4v1s6s1j2t8kja5b6vj1b4e0j4e7e9e8r5r0s7p6r6r7";
+		$stat = "l1o0p0h0g0a0b0c1m7m5k4j5r1d0y0d2d1k3a2m3m4x0s0t7c4g4v1s6s1t8kjvj1b4e0j4e7e9e8r5r0s7p6r6r7";
 		$line = $this->request($stat);
 		$data = array();
 		
@@ -87,8 +84,8 @@ class ystockquote {
 		$data["PE_ratio"] = $line[41]; //r0
 		$data["short_ratio"] = $line[42]; //s7
 		$data["book_price"] = $line[43]; //p6
-		$data["EPS_est_curr_year"] = $line[44]; //r6
-		$data["EPS_est_next_year"] = $line[45]; //r7	
+		$data["Price_EPS_est_curr_year"] = $line[44]; //r6
+		$data["Price_EPS_est_next_year"] = $line[45]; //r7	
 		
 		
 		/* currently broken: it seems that these values sometimes contain commmas as the separator which obviously screws with the whole 
@@ -103,7 +100,6 @@ class ystockquote {
 		}
 		
 	public function get_afterHoursChangeRealtime() {
-		// tested with FB 10/6/2013 -> N/A
 		$stat = 'c8';
 		$line = $this->request($stat);
 		
@@ -111,7 +107,6 @@ class ystockquote {
 		}
 		
 	public function get_annualizedGain() {
-		// tested with FB 10/6/2013 -> '-'
 		$stat = 'g3';
 		$line = $this->request($stat);
 		
@@ -119,7 +114,6 @@ class ystockquote {
 		}
 	
 	public function get_ask() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'a0';
 		$line = $this->request($stat);
 		
@@ -127,7 +121,6 @@ class ystockquote {
 		}
 		
 	public function get_askRealtime() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'b2';
 		$line = $this->request($stat);
 		
@@ -135,7 +128,6 @@ class ystockquote {
 		}
 		
 	public function get_askSize() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'a5';
 		$line = $this->request($stat);
 		
@@ -143,7 +135,6 @@ class ystockquote {
 		}
 		
 	public function get_avgDailyVol() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'a2';
 		$line = $this->request($stat);
 		
@@ -151,7 +142,6 @@ class ystockquote {
 		}
 	
 	public function get_bid() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'b0';
 		$line = $this->request($stat);
 		
@@ -159,7 +149,6 @@ class ystockquote {
 		}
 	
 	public function get_bidRealtime() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'b3';
 		$line = $this->request($stat);
 		
@@ -167,7 +156,6 @@ class ystockquote {
 		}
 	
 	public function get_bidSize() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'b6';
 		$line = $this->request($stat);
 		
@@ -175,7 +163,6 @@ class ystockquote {
 		}
 		
 	public function get_bookValuePerShare() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'b4';
 		$line = $this->request($stat);
 		
@@ -183,23 +170,13 @@ class ystockquote {
 		}
 		
 	public function get_change() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'c1';
 		$line = $this->request($stat);
 		
 		return $line[0];
 		}
-	/*	
-	public function get_changeInPercent() {
-		// tested with FB 10/6/2013 -> passed
-		$stat = 'c0';
-		$line = $this->request($stat);
-		
-		return $line[0];
-		}	
-		*/
+
 	public function get_changeFrom50DayMovingAvg() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'm7';
 		$line = $this->request($stat);
 		
@@ -207,7 +184,6 @@ class ystockquote {
 		}
 		
 	public function get_changeFrom200DayMovingAvg() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'm5';
 		$line = $this->request($stat);
 		
@@ -215,7 +191,6 @@ class ystockquote {
 		}
 	
 	public function get_changeFromYearHigh() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'k4';
 		$line = $this->request($stat);
 		
@@ -223,7 +198,6 @@ class ystockquote {
 		}
 	
 	public function get_changeFromYearLow() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'j5';
 		$line = $this->request($stat);
 		
@@ -231,7 +205,6 @@ class ystockquote {
 		}	
 		
 	public function get_changeInPercent() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'p2';
 		$line = $this->request($stat);
 		
@@ -239,7 +212,6 @@ class ystockquote {
 		}
 		
 	public function get_changeInPercentRealtime() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'k2';
 		$line = $this->request($stat);
 		
@@ -247,7 +219,6 @@ class ystockquote {
 		}
 		
 	public function get_changeRealtime() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'c6';
 		$line = $this->request($stat);
 		
@@ -255,7 +226,6 @@ class ystockquote {
 		}
 		
 	public function get_commision() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'c3';
 		$line = $this->request($stat);
 		
@@ -263,7 +233,6 @@ class ystockquote {
 		}	
 		
 	public function get_currency() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'c4';
 		$line = $this->request($stat);
 		
@@ -271,7 +240,6 @@ class ystockquote {
 		}
 		
 	public function get_dayHigh() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'h0';
 		$line = $this->request($stat);
 		
@@ -279,7 +247,6 @@ class ystockquote {
 		}
 	
 	public function get_dayLow() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'g0';
 		$line = $this->request($stat);
 		
@@ -287,7 +254,6 @@ class ystockquote {
 		}
 	
 	public function get_dayRange() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'm0';
 		$line = $this->request($stat);
 		
@@ -295,7 +261,6 @@ class ystockquote {
 		}
 		
 	public function get_dayRangeRealtime() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'm2';
 		$line = $this->request($stat);
 		
@@ -303,7 +268,6 @@ class ystockquote {
 		}	
 		
 	public function get_dayValueChange() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'w1';
 		$line = $this->request($stat);
 		
@@ -311,7 +275,6 @@ class ystockquote {
 		}
 		
 	public function get_dayValueChangeRealtime() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'w4';
 		$line = $this->request($stat);
 		
@@ -319,7 +282,6 @@ class ystockquote {
 		}
 		
 	public function get_dividendPayDate() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'r1';
 		$line = $this->request($stat);
 		
@@ -327,7 +289,6 @@ class ystockquote {
 		}
 		
 	public function get_trailingAnnualDividendYield() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'd0';
 		$line = $this->request($stat);
 		
@@ -335,7 +296,6 @@ class ystockquote {
 		}
 		
 	public function get_trailingAnnualDividendYieldInPercent() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'y0';
 		$line = $this->request($stat);
 		
@@ -343,7 +303,6 @@ class ystockquote {
 		}
 		
 	public function get_dilutedEPS() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'e0';
 		$line = $this->request($stat);
 		
@@ -358,7 +317,6 @@ class ystockquote {
 		}
 	
 	public function get_EPSEstimateCurrentYear() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'e7';
 		$line = $this->request($stat);
 		
@@ -366,7 +324,6 @@ class ystockquote {
 		}
 		
 	public function get_EPSEstimatenextQuarter() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'e9';
 		$line = $this->request($stat);
 		
@@ -374,7 +331,6 @@ class ystockquote {
 		}	
 	
 	public function get_EPSEstimateNextYear() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'e8';
 		$line = $this->request($stat);
 		
@@ -382,7 +338,6 @@ class ystockquote {
 		}	
 		
 	public function get_exDividendDate() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'q0';
 		$line = $this->request($stat);
 		
@@ -397,7 +352,6 @@ class ystockquote {
 		}
 		
 	public function get_sharesFloat() {
-		// tested with FB 10/6/2013 -> passed
 		$stat = 'f6';
 		$line = $this->request($stat);
 		
@@ -760,16 +714,14 @@ class ystockquote {
 			This returns an array of arrays; each array contains the following:
 				Date, Open, High, Low, Close, Volume, Adjusted Close
 		*/
-		list($month_from, $day_from, $year_from) = explode('/',$start_date);
-		list($month_to, $day_to, $year_to) = explode('/',$end_date);
+		list($month_from, $day_from, $year_from) = explode('-',$start_date);
+		list($month_to, $day_to, $year_to) = explode('-',$end_date);
 		
 		$month_from -= 1;
-		$day_from -= 1;
 		$month_to -= 1;
-		$day_to -= 1;
 		
 		$url = "http://ichart.yahoo.com/table.csv?s={$this->ticker}&a={$month_from}&b={$day_from}&c={$year_from}&d={$month_to}&e={$day_to}&f={$year_to}&g={$period}&ignore=.csv";
-		
+
 		if ($file = fopen($url,"r")){
 			$row = 0;
 			$hist_data = array();
@@ -792,25 +744,26 @@ class ystockquote {
 			fclose($file);
 			}
 		else {
-			echo "Error opening the file.<br />";
+			//echo "Error opening the file for $this->ticker.<br />";
+			$hist_data = '';
 			}
 
-		return $hist_data;
-		
+		return $hist_data;	
 		}
 }
 
-	/* Example of how to use: 
-	$FB = new ystockquote('FB'); // generates new ystockquote for FB
-	$all = $FB->get_all(); // gets all data for FB
-	$data = $FB->get_historical_prices('01/01/20012','10/14/2013','d'); // grabs daily historical prices for FB for the timeframe Jan 1, 2012 to Oct 10, 2013
-	foreach ($all as $key=> $value){
-		echo "{$key}: {$value} <br/>";
-		}
+	/* Example of how to use: */
+	//$FB = new ystockquote('FB'); // generates new ystockquote for FB
+	//$all = $FB->get_all(); // gets all data for FB
+	
+	//foreach ($all as $key=> $value){
+	//	echo "{$key}: {$value} <br/>";
+	//	}
+	/*
+	$data = $FB->get_historical_prices('01/01/1800','10/14/2013','d'); // grabs daily historical prices for FB for the timeframe Jan 1, 2012 to Oct 10, 2013
 	foreach ($data as $value) {
 		print_r($value);
-		echo "<br />";
-		
+		echo "<br />";	
 		}
 	*/
 
