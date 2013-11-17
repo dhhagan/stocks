@@ -1,6 +1,0 @@
-Log file for Historical Stock data: 2013/11/13
-
-The following companies are not yet set up: 	TWTR
-
-Added 26421 total rows for 10 tickers. 
-Time to run script: 40.67 seconds

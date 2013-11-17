@@ -1,5 +1,0 @@
-Log file for Historical Stock data: 2013/11/14
-Could not open csv data file for ABR-A Could not open csv data file for ABR-B Could not open csv data file for ABW-B 
-
-Added 0 total rows for 22 tickers. 
-Time to run script: 17.08 seconds
