@@ -1,6 +1,7 @@
 
 config.php
 tmp.csv
+logs/
 
 #################
 ## Eclipse
