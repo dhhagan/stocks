@@ -17,84 +17,67 @@ class ystockquote {
 		}
 		
 	public function get_all() {
-		$stat = "l1o0p0h0g0a0b0c1m7m5k4j5r1d0y0d2d1k3a2m3m4x0s0t7c4g4v1s6s1t8kjvj1b4e0j4e7e9e8r5r0s7p6r6r7";
+		$stat = "l1o0p0h0g0c1m7m5k4j5r1d0y0d1a2m3m4x0s0c4s6t8kjvj1b4e0j4e7e9e8r5r0s7p6r6r7";
 		$line = $this->request($stat);
 		$data = array();
 		
 		// pricing
 		$data["price"] = $line[0]; //l1
 		$data["open"] = $line[1]; //o0
-		$data["close"] = $line[2]; //p0
+		$data["previous_close"] = $line[2]; //p0
 		$data["high"] = $line[3]; //h0
 		$data["low"] = $line[4]; //g0
-		$data["ask"] = $line[5];  //a0
-		$data["bid"] = $line[6]; //b0
 		
 		// changes
-		$data["change"] = $line[7]; //c1
-		$data["change_from_50day"] = $line[8]; //m7
-		$data["change_from_200day"] = $line[9]; //m5
-		$data["change_from_year_high"] = $line[10];  //k4
-		$data["change_from_year_low"] = $line[11];  //j5
+		$data["change"] = $line[5]; //c1
+		$data["change_from_50day"] = $line[6]; //m7
+		$data["change_from_200day"] = $line[7]; //m5
+		$data["change_from_year_high"] = $line[8];  //k4
+		$data["change_from_year_low"] = $line[9];  //j5
 		//$data["change_in_percent"] = $line[]; //c0->currently not working?
 		
 		// dividends
-		$data["dividend_pay_date"] = $line[12]; //r1
-		$data["annual_div_yield"] = $line[13]; //d0
-		$data["annual_div_yield_percent"] = $line[14]; //y0
+		$data["dividend_pay_date"] = $line[10]; //r1
+		$data["annual_div_yield"] = $line[11]; //d0
+		$data["annual_div_yield_percent"] = $line[12]; //y0
 		
 		// date
-		$data["trade_date"] = $line[15]; //d2
-		$data["last_trade_date"] = $line[16]; //d1
-		$data["last_trade_size"] = $line[17]; //k3
+		$data["last_trade_date"] = $line[13]; //d1
 		
 		// averages
-		$data["avg_daily_volume"] = $line[18]; //a2
-		$data["50_day_moving"] = $line[19]; //m3
-		$data["200day_moving_avg"] = $line[20]; //m4	
+		$data["avg_daily_volume"] = $line[14]; //a2
+		$data["50_day_moving"] = $line[15]; //m3
+		$data["200day_moving_avg"] = $line[16]; //m4	
 		
 		// misc
-		$data["exchange"] = $line[21]; //x0
-		$data["symbol"] = $line[22]; //s0
-		$data["ticker_trend"] = $line[23]; //t7
-		$data["currency"] = $line[24]; //c4
-		$data["holdings_gain"] = $line[25]; //g4
-		$data["holdings_value"] = $line[26]; //v1
-		$data["revenue"] = $line[27]; //s6
-		$data["shares_owned"] = $line[28]; //s1
-		$data["one_year_target"] = $line[29]; //t8
+		$data["exchange"] = $line[17]; //x0
+		$data["symbol"] = $line[18]; //s0
+		$data["currency"] = $line[19]; //c4
+		$data["revenue"] = $line[20]; //s6
+		$data["one_year_target"] = $line[21]; //t8
 		
 		// 52 week pricing
-		$data["52_week_high"] = $line[30]; //k
-		$data["52_week_low"] = $line[31]; //j
+		$data["52_week_high"] = $line[22]; //k
+		$data["52_week_low"] = $line[23]; //j
 		
 		// volume
-		$data["volume"] = $line[32]; //v
-		$data["market_cap"] = $line[33]; //j1
+		$data["volume"] = $line[24]; //v
+		$data["market_cap"] = $line[25]; //j1
 		
 		
 		// ratios
-		$data["book_val_per_share"] = $line[34]; //b4	
-		$data["diluted_eps"] = $line[35]; //e0
-		$data["ebitda"] = $line[36]; //j4
-		$data["eps_est_current_year"] = $line[37]; //e7
-		$data["eps_est_quart"] = $line[38]; //e9
-		$data["eps_est_next_year"] = $line[39]; //e8
-		$data["PEG_ratio"] = $line[40]; //r5
-		$data["PE_ratio"] = $line[41]; //r0
-		$data["short_ratio"] = $line[42]; //s7
-		$data["book_price"] = $line[43]; //p6
-		$data["Price_EPS_est_curr_year"] = $line[44]; //r6
-		$data["Price_EPS_est_next_year"] = $line[45]; //r7	
-		
-		
-		/* currently broken: it seems that these values sometimes contain commmas as the separator which obviously screws with the whole 
-			comma-separated value thing
-			
-		$data["outstanding_shares"] = $line[46]; //j2->it seems there is an error with how yahoo formats this
-		$data["ask_size"] = $line[47]; //a5
-		$data["bid_size"] = $line[48]; //b6
-		*/
+		$data["book_val_per_share"] = $line[26]; //b4	
+		$data["diluted_eps"] = $line[27]; //e0
+		$data["ebitda"] = $line[28]; //j4
+		$data["eps_est_current_year"] = $line[29]; //e7
+		$data["eps_est_quart"] = $line[30]; //e9
+		$data["eps_est_next_year"] = $line[31]; //e8
+		$data["PEG_ratio"] = $line[32]; //r5
+		$data["PE_ratio"] = $line[33]; //r0
+		$data["short_ratio"] = $line[34]; //s7
+		$data["book_price"] = $line[35]; //p6
+		$data["Price_EPS_est_curr_year"] = $line[36]; //r6
+		$data["Price_EPS_est_next_year"] = $line[37]; //r7	
 		
 		return $data;
 		}
