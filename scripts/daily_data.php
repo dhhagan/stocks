@@ -7,6 +7,7 @@
 				
 	Updates: 
 		Nov 16, 2013	D Hagan		First test run for 25 tickers=>successful
+		Dec 8, 2013		D Hagan		Tested script for 25 tickers =>
 
 */
 
