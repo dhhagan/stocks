@@ -97,7 +97,7 @@
 
 			}
 		function del_entry() {
-			$qry = sprintf("DELETE FROM %s WHERE ticker={$this->tick}", mysql_real_escape_string(TKR_TBL));
+			$qry = sprintf("DELETE FROM %s WHERE ticker={$this->tick} and exchange={$this->exchange}", mysql_real_escape_string(TKR_TBL));
 			mysql_query($qry) or die("ERROR: " . mysql_error());
 			}
 		}

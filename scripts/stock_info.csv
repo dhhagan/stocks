@@ -10,12 +10,12 @@ ABBV,Abbvie Inc. Common Stock,NYSE
 ABC,Amerisourcebergen Corporation,NYSE
 ABM,Abm Industries Incorporated,NYSE
 ABR,Arbor Realty Trust,NYSE
-ABR-A,Arbor Realty Trust Inc.,NYSE
-ABR-B,Arbor Realty Trust Inc ,NYSE
+ABR-PA,Arbor Realty Trust Preferred Se,NYSE
+ABR-PB,Arbor Realty Trust Cumulative R,NYSE
 ABT,Abbot Laboratories,NYSE
 ABV,Companhia De Bebidas - Ambev,NYSE
 ABV.C,Companhia De Bebidas - Ambev,NYSE
-ABW-B,Associated Banc-Corp Depositary,NYSE
+ABW-PB,Associated Banc-Corp Depositary,NYSE
 ABX,Barrick Gold Corp.,NYSE
 ACE,Ace Limited,NYSE
 ACG,Alliancebernstein Income Fund Inc,NYSE
@@ -49,11 +49,10 @@ AEO,American Eagle Outfitters,NYSE
 AEP,American Electric Power Company,NYSE
 AER,Aercap Holdings N.V.,NYSE
 AES,The Aes Corp.,NYSE
-AES-C,Aes TR III 6.75 Pfd,NYSE
+AES-PC,AES Corporation Class C P,NYSE
 AET,Aetna Inc.,NYSE
 AEV,Aegon Nv,NYSE
 AF,Astoria Financial Corp.,NYSE
-AF-C,Astoria Financial Group Inc.,NYSE
 AFA,American Financial Group Inc.,NYSE
 AFB,Alliance National Municipal,NYSE
 AFC,Allied Capital Corp.,NYSE
@@ -74,7 +73,7 @@ AGM-A,Federal Agricultural Mortgage  ,NYSE
 AGM.A,Federal Agricultural Mortgage Corp.,NYSE
 AGN,Allergan,NYSE
 AGO,Assured Guaranty Ltd,NYSE
-AGO-B,Assured Guaranty Ltd [B],NYSE
+AGO-PF,Assured Guaranty Ltd [B],NYSE
 AGO-E,Assured Guaranty Ltd [E],NYSE
 AGO-F,Assured Guaranty Ltd [F],NYSE
 AGRO,Adecoagro S.A.,NYSE
@@ -83,18 +82,18 @@ AH,Accretive Health,NYSE
 AHC,A.H. Belo Corp.,NYSE
 AHH,Armada Hoffler Properties Inc.,NYSE
 AHL,Aspen Insurance Holdings,NYSE
-AHL-A,Aspen Insurance Pfd,NYSE
-AHL-B,Aspen Insurance Holdings Limit,NYSE
+AHL-PA,Aspen Insurance Holdings Limite,NYSE
+AHL-PC,Aspen Insurance Holdings Limite,NYSE
 AHL-C,Aspen ins Pfd Inc,NYSE
 AHS,Amn Healthcare Services Inc,NYSE
 AHT,Ashford Hospitality Trust Inc,NYSE
-AHT-A,Ashford Hosp TR Pfd,NYSE
-AHT-E,Ashford Hospitality Trust Inc 9,NYSE
+AHT-PA,Ashford Hospitality Trust Inc 8,NYSE
+AHT-PD,Ashford Hospitality Trust Inc 8,NYSE
 AI,Arlington Asset Investment Corp,NYSE
 AIB,Apollo Investment Corporation,NYSE
 AIF,Apollo Tactical Income Fund Inc,NYSE
 AIG,American International Group,NYSE
-AIG.W,American International Group,NYSE
+AIG-WT,American International Group,NYSE
 AIN,Albany International Corp.,NYSE
 AIR,Aar ,NYSE
 AIT,Applied Industrial Technologies,NYSE

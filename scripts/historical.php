@@ -47,7 +47,7 @@ fwrite('\r\n');
 
 // List of companies=> Eventually will be pulled from table ticker_info
 $companies = array();
-$company_query = sprintf("SELECT ticker FROM %s LIMIT 300", TKR_TBL);
+$company_query = sprintf("SELECT ticker FROM %s", TKR_TBL);
 $company_result = mysql_query($company_query);
 if (!$company_result) {
 	die("Could not get company information from {TKR_TBL}: " . mysql_error());
@@ -56,7 +56,6 @@ if (!$company_result) {
 while ($line = mysql_fetch_row($company_result)) {
 	array_push($companies, $line[0]);
 	}
-
 
 $totalRows = 0;
 $numCompanies = 0;
@@ -117,8 +116,10 @@ foreach ($companies as $tick){
 			}
 
 		$tmp = 'tmp.csv';
+		$lines = 0;
 		$file = fopen($tmp, 'w');
 		foreach ($data as $row) {
+			$lines++;
 			$newDate = new DateTime($row['Date']);
 			$date_qry = sprintf("SELECT id FROM %s WHERE tkr_id=%d AND entry_date='%s'", 
 						mysql_real_escape_string(HISTORICAL_TBL), $id, mysql_real_escape_string($newDate->format('Y-m-d')));
@@ -144,6 +145,7 @@ foreach ($companies as $tick){
 
 			mysql_query($ins_qry) or die("Invalid query: " . mysql_error() . "\n");
 			
+		fwrite($log, "\t Added {$lines} lines for {$tick} \r");
 		$totalRows += $rowNo;
 		$numCompanies++;
 
